@@ -11,27 +11,33 @@ create table productos(
 )
 
 insert into productos (codigo,nombre,descripcion,precio,stock)
-values ('321342','Papel','Papel xerox blanco',0.06,'1234')
+values ('321342','Quaker','Cereal para preparar',2.06,'1234')
 
 insert into productos (codigo,nombre,descripcion,precio,stock)
-values ('894213','Boligrafo','Boligrafo azul',0.25,'6732')
+values ('894213','Boligrafo','Boligrafo azul',4.25,'6732')
 
 insert into productos (codigo,nombre,descripcion,precio,stock)
-values ('562334','Cuaderno','Cuaderno cuadros 100H',0.45,'125')
+values ('562334','Quesadillas','Alimento preparado',3.45,'125')
 
 insert into productos (codigo,nombre,descripcion,precio,stock)
-values ('782134','Carpeta','Carpeta carton rojo',0.11,'62')
+values ('782134','Carpeta','Carpeta carton rojo',8.11,'62')
 
 insert into productos (codigo,nombre,descripcion,precio,stock)
-values ('783272','Archivador','Archivador negro',0.78,'89')
+values ('783272','Archivador','Archivador negro',5.78,'89')
 
 insert into productos (codigo,nombre,precio,stock)
-values ('321415','Lapiz',0.09,'235')
+values ('321415','Lapiz',3.00,'235')
 
 insert into productos (codigo,nombre,precio,stock)
-values ('781234','Papel Colores',0.05,'9867')
+values ('781234','Papel Colores',2.55,'9867')
 
 insert into productos (codigo,nombre,precio,stock)
 values ('988972','Perforadora',12.56,'56')
 
 select * from productos
+
+select * from productos where nombre like 'Q%'
+
+select * from productos where descripcion is null
+
+select * from productos where precio between '2.00' and '3.00'

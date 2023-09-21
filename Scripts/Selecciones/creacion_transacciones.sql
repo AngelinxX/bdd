@@ -18,16 +18,16 @@ insert into transacciones(codigo,numero_cuenta,monto,tipo,fecha,hora)
 values ('2138742','12342',72.36,'C','05/12/1978','19:23')
 
 insert into transacciones(codigo,numero_cuenta,monto,tipo,fecha,hora)
-values ('3124352','21341',22.42,'D','10/12/1990','05:09')
+values ('3124352','21341',867.42,'D','10/12/1990','05:09')
 
 insert into transacciones(codigo,numero_cuenta,monto,tipo,fecha,hora)
-values ('3245213','98942',32.54,'C','09/06/2021','09:41')
+values ('3245213','98942',1089.54,'C','09/06/2021','09:41')
 
 insert into transacciones(codigo,numero_cuenta,monto,tipo,fecha,hora)
 values ('2412424','45423',24.75,'D','08/03/2000','07:41')
 
 insert into transacciones(codigo,numero_cuenta,monto,tipo,fecha,hora)
-values ('3123124','89823',67.23,'D','07/02/1989','17:31')
+values ('3123124','89823',1967.23,'D','07/02/1989','17:31')
 
 insert into transacciones(codigo,numero_cuenta,monto,tipo,fecha,hora)
 values ('7421342','78463',412.21,'D','09/03/1999','14:12')
@@ -42,3 +42,9 @@ insert into transacciones(codigo,numero_cuenta,monto,tipo,fecha,hora)
 values ('8124235','12324',312.76,'D','03/04/2001','08:31')
 
 select * from transacciones
+
+select * from transacciones where tipo='D'
+
+select * from transacciones where monto between '200.00' and '2000.00'
+
+select codigo,monto,tipo,fecha from transacciones where fecha is not null

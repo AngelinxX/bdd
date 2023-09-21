@@ -10,27 +10,33 @@ create table videojuegos(
 )
 
 insert into videojuegos(codigo,nombre,descripcion,valoracion)
-values ('123142','Resident Evil','Muertos vivientes','32')
+values ('123142','Resident Evil','Muertos vivientes','10')
 
 insert into videojuegos(codigo,nombre,descripcion,valoracion)
-values ('432232','Prince of Persia','Arenas del tiempor','24')
+values ('432232','Prince of Persia','Arenas del tiempor','7')
 
 insert into videojuegos(codigo,nombre,descripcion,valoracion)
-values ('124322','Final Fantasy','Juego RPG','12')
+values ('124322','Final Fantasy','Juego RPG','9')
 
 insert into videojuegos(codigo,nombre,descripcion,valoracion)
-values ('784323','Dota','Player VS Player','14')
+values ('784323','Crash','Player VS Player','8')
 
 insert into videojuegos(codigo,nombre,descripcion,valoracion)
-values ('342423','Assasin','Asesinatos','54')
+values ('342423','Assasin','Asesinatos','4')
 
 insert into videojuegos(codigo,nombre,valoracion)
-values ('423425','Lost Planet','17')
+values ('423425','Lost Planet','7')
 
 insert into videojuegos(codigo,nombre,valoracion)
-values ('787624','Mario','08')
+values ('787624','Mario','8')
 
 insert into videojuegos(codigo,nombre,valoracion)
-values ('487813','Rabbit','06')
+values ('487813','Rabbit','10')
 
 select * from videojuegos
+
+select * from videojuegos where nombre like 'C%'
+
+select * from videojuegos where valoracion between '9' and '10'
+
+select * from videojuegos where descripcion is null 
