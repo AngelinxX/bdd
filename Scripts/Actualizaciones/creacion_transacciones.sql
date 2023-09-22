@@ -33,10 +33,10 @@ insert into transacciones(codigo,numero_cuenta,monto,tipo,fecha,hora)
 values ('7421342','78463',412.21,'D','09/03/1999','14:12')
 
 insert into transacciones(codigo,numero_cuenta,monto,tipo,fecha,hora)
-values ('3214432','31435',67.41,'C','08/09/1998','17:59')
+values ('3214432','31435',350.41,'C','08/09/1998','17:59')
 
 insert into transacciones(codigo,numero_cuenta,monto,tipo,fecha,hora)
-values ('2145343','98782',65.41,'D','09/09/1995','13:31')
+values ('2145343','98782',125.67,'D','09/09/1995','13:31')
 
 insert into transacciones(codigo,numero_cuenta,monto,tipo,fecha,hora)
 values ('8124235','12324',312.76,'D','03/04/2001','08:31')
@@ -48,3 +48,9 @@ select * from transacciones where tipo='D'
 select * from transacciones where monto between '200.00' and '2000.00'
 
 select codigo,monto,tipo,fecha from transacciones where fecha is not null
+
+update transacciones set tipo = 'T'
+where monto between '100.00' and '500.00'
+and hora between '14:00' and '20:00'
+and extract (month from fecha)= '9'
+
