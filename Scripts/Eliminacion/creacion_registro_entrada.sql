@@ -19,7 +19,7 @@ insert into registro_entrada (codigo_registro,cedula_empleado,fecha,hora)
 values ('9897134','1721321452','10/08/2012','08:04')
 
 insert into registro_entrada (codigo_registro,cedula_empleado,fecha,hora)
-values ('8978234','1723492134','10/08/2012','18:55')
+values ('8978234','1723492134','10/06/2012','18:55')
 
 insert into registro_entrada (codigo_registro,cedula_empleado,fecha,hora)
 values ('8718233','1782132454','10/08/2012','20:20')
@@ -28,7 +28,7 @@ insert into registro_entrada (codigo_registro,cedula_empleado,fecha,hora)
 values ('2134532','1712314952','12/08/2012','09:06')
 
 insert into registro_entrada (codigo_registro,cedula_empleado,fecha,hora)
-values ('1237843','1732143244','12/08/2012','04:09')
+values ('1237843','1732143244','12/06/2012','04:09')
 
 insert into registro_entrada (codigo_registro,cedula_empleado,fecha,hora)
 values ('8412477','1723787342','11/08/2012','16:08')
@@ -37,7 +37,7 @@ insert into registro_entrada (codigo_registro,cedula_empleado,fecha,hora)
 values ('3127463','1724264673','11/08/2012','13:10')
 
 insert into registro_entrada (codigo_registro,cedula_empleado,fecha,hora)
-values ('7823164','1723143463','11/08/2012','11:01')
+values ('7823164','1723143463','11/06/2012','11:01')
 
 select * from registro_entrada
 
@@ -49,3 +49,6 @@ select * from registro_entrada where hora >= '08:00'
 
 update registro_entrada set cedula_empleado = '082345679'
 where extract (month from fecha)= '08' 
+
+delete from  registro_entrada
+where extract(month from fecha) = '6'

@@ -44,3 +44,6 @@ select * from productos where precio between '2.00' and '3.00'
 
 update productos set stock = '0'
 where descripcion is null
+
+delete from productos
+where descripcion is null

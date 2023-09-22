@@ -23,13 +23,13 @@ insert into estudiantes(cedula,nombre,apellido,email,fecha_nacimiento)
 values (1892374833,'Edwin','Basantes','e.basantes@gmail','27/08/1982')
 
 insert into estudiantes(cedula,nombre,apellido,email,fecha_nacimiento)
-values (1874812453,'Carolina','Perez','c.perez@gmail','17/08/1990')
+values (1874812405,'Carolina','Perez','c.perez@gmail','17/08/1990')
 
 insert into estudiantes(cedula,nombre,apellido,email,fecha_nacimiento)
 values (1782348509,'Domenica','Quinga','d.quinga@gmail','09/09/1978')
 
 insert into estudiantes(cedula,nombre,apellido,email,fecha_nacimiento)
-values (1723454236,'Janeth','Chavez','j.chavez@gmail','22/07/1975')
+values (1723454205,'Janeth','Chavez','j.chavez@gmail','22/07/1975')
 
 insert into estudiantes(cedula,nombre,apellido,email,fecha_nacimiento)
 values (1782374623,'Edison','Gonzalez','e.gonzalez@gmail','30/01/1989')
@@ -44,3 +44,6 @@ select nombre from estudiantes where nombre like 'A%'
 
 update estudiantes set apellido = 'Hernandez'
 where cedula like '17%'
+
+delete from estudiantes
+where cedula like '%05'

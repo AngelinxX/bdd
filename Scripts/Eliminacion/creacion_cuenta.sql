@@ -22,7 +22,7 @@ insert into cuenta(numero_cuenta,cedula_propietario,fecha_creacion,saldo)
 values ('89812','17124','05/07/2023',7863.90)
 
 insert into cuenta(numero_cuenta,cedula_propietario,fecha_creacion,saldo)
-values ('21776','12341','15/08/2023',887.23)
+values ('21776','10341','15/08/2023',887.23)
 
 insert into cuenta(numero_cuenta,cedula_propietario,fecha_creacion,saldo)
 values ('23445','09321','15/08/2023',240.89)
@@ -37,7 +37,7 @@ insert into cuenta(numero_cuenta,cedula_propietario,fecha_creacion,saldo)
 values ('21344','17243','17/03/2023',892.38)
 
 insert into cuenta(numero_cuenta,cedula_propietario,fecha_creacion,saldo)
-values ('32532','09124','29/05/2023',213.67)
+values ('32532','10124','29/05/2023',213.67)
 
 select * from cuenta 
 
@@ -49,3 +49,6 @@ select numero_cuenta,saldo from cuenta where fecha_creacion >= '21/07/2023'
 
 update cuenta set saldo = '10'
 where cedula_propietario like '17%'
+
+delete from cuenta
+where cedula_propietario like '10%'
