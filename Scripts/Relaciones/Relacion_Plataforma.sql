@@ -17,6 +17,13 @@ values(0002,'xbox','3');
 insert into plataforma(id_plataforma,nombre_plataforma,codigo_plataforma)
 values(0003,'nintendo','4');
 
-select * from compras
+select * 
+from videojuegos vi, plataforma pl
+where vi.codigo = pl.codigo_plataforma
+and vi.descripcion like '%Muertos%' and vi.valoracion > 7
+or vi.nombre like 'C%' and vi.valoracion >= 8
 
-select * from clientes
+select pl.id_plataforma,pl.nombre_plataforma, vi.codigo
+from videojuegos vi, plataforma pl
+where vi.codigo = pl.codigo_plataforma
+and vi.nombre = 'Resident Evil'

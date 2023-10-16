@@ -35,5 +35,10 @@ insert into banco(codigo_banco,codigo_transaccion,detalle)
 values('010','19','Pagos servicios');
 
 select * from transacciones
+where tipo = 'C'
+and numero_cuenta >= '222001'
+and numero_cuenta <= '222004'
 
-select * from banco
+select * 
+from transacciones 
+where codigo in (select codigo_transaccion from banco where codigo_transaccion = '1')

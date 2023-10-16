@@ -55,6 +55,17 @@ values('001','Mariana Felix','01/09/1999','11:59');
 insert into empleado(codigo_empleado,nombre,fecha,hora)
 values('002','Miguel Estupinan','02/12/1989','10:00');
 
-select * from registro_entrada
+select  re.cedula_empleado,re.fecha,em.nombre
+from registro_entrada re, empleado em
+where re.codigo_empleado = em.codigo_empleado
+and re.fecha between '2023/08/01' and '2023/08/31'
+or re.cedula_empleado like '17%'
+and re.hora between '08:00' and '12:00'
+or re.fecha between '2023/10/06' and '2023/10/20'
+or re.cedula_empleado like '%08%'
+and re.hora between '09:00' and '13:00'
 
-select * from empleado
+select  re.codigo_registro,em.nombre
+from registro_entrada re, empleado em
+where re.codigo_empleado = em.codigo_empleado
+and re.cedula_empleado like '%2132%'

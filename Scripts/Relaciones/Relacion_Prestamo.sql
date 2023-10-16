@@ -36,6 +36,11 @@ values('1724654598',764.45,'23/06/2022','18:42','DANIEL MENDOZA');
 insert into prestamo(cedula,monto,fecha_prestamo,hora_prestamo,garante)
 values('1724234576',536.65,'23/08/2022','14:50','FABRICIO ALMEIDA');
 
-select * from personas
+select pe.cantidad_ahorrada, pr.monto, pr.garante
+from prestamo pr, personas pe
+where pr.cedula = pe.cedula
+and pr.monto > '100.00'
+and pr.monto< '1000.00'
 
-select * from prestamo
+select * from personas
+where nombre = 'Rolando'

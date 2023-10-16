@@ -33,3 +33,10 @@ values (009,'1723231212','06/05/2023',345.5);
 insert into compras(id_compras,cedula,fecha_compra,monto)
 values (010,'1723231212','12/03/2023',6453.8);
 
+
+select nombre, apellido from clientes
+where cedula like '%7%'
+
+select * from clientes
+where cedula = '1723231212'
+

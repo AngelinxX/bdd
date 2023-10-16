@@ -34,3 +34,12 @@ values (009,'781234','06/05/2023',345);
 insert into ventas(id_ventas,codigo_producto,fecha_venta,cantidad)
 values (010,'783272','12/03/2023',6453);
 
+select pr.nombre, pr.stock, ve.cantidad
+from productos pr, ventas ve
+where pr.codigo = ve.codigo_producto
+and pr.nombre like '%m%' or pr.descripcion = null
+
+select pr.nombre, pr.stock
+from productos pr, ventas ve
+where pr.codigo = ve.codigo_producto
+and ve.cantidad = 345

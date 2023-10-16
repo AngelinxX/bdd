@@ -54,6 +54,11 @@ values('001','Mariana Felix');
 insert into profesores(codigo,nombre)
 values('002','Miguel Estupinan');
 
-select * from estudiantes
+select  pr.codigo,es.nombre,es.apellido
+from profesores pr, estudiantes es
+where pr.codigo = es.codigo_profesor
+and es.apellido like '%n%'
 
-select * from profesores
+select * 
+from estudiantes es
+where codigo_profesor in (select codigo from profesores where nombre = 'Miguel Estupinan')

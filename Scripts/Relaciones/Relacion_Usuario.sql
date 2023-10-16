@@ -26,6 +26,13 @@ values('1723231212','Andres','Quijije','null','0');
 insert into usuario(cedula_propietario,nombre,apellido,tipo_cuenta,limite_credito)
 values ('0844124212','Jose','Andrango','null','0');
 
-select * from usuario
+select cu.numero_cuenta, us.nombre  from
+cuenta cu, usuario us
+where
+cu.cedula_propietario = us.cedula_propietario
+and saldo > '100' 
+and saldo < '1000'
 
-select * from cuenta
+select *  from cuenta
+where fecha_creacion > '2022/09/21' 
+and fecha_creacion < '2023/09/21' 
