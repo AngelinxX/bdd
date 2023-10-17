@@ -42,3 +42,14 @@ and numero_cuenta <= '222004'
 select * 
 from transacciones 
 where codigo in (select codigo_transaccion from banco where codigo_transaccion = '1')
+
+select count (tr.codigo)
+from transacciones tr, banco ba
+where tr.codigo = ba.codigo_transaccion
+and tr.tipo = 'C'
+
+
+select tr.numero_cuenta, ROUND (AVG(cast (tr.monto as decimal)),2)
+from transacciones tr, banco ba
+where tr.codigo = ba.codigo_transaccion
+group by tr.numero_cuenta

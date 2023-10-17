@@ -27,3 +27,12 @@ select pl.id_plataforma,pl.nombre_plataforma, vi.codigo
 from videojuegos vi, plataforma pl
 where vi.codigo = pl.codigo_plataforma
 and vi.nombre = 'Resident Evil'
+
+select vj.codigo,count(id_plataforma)
+from videojuegos vj, plataforma pl
+where vj.codigo = pl.codigo_plataforma
+group by vj.codigo
+
+select ROUND (AVG(vj.valoracion),2)
+from videojuegos vj, plataforma pl
+where vj.codigo = pl.codigo_plataforma

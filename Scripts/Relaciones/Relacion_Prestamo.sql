@@ -44,3 +44,15 @@ and pr.monto< '1000.00'
 
 select * from personas
 where nombre = 'Rolando'
+
+select pe.cedula, sum(pr.monto) 
+from personas pe, prestamo pr
+where pe.cedula = pr.cedula
+and pe.cedula = '1724654598'
+group by pe.cedula
+
+
+select count (pe.numero_hijos) 
+from personas pe, prestamo pr
+where pe.cedula = pr.cedula
+and pe.numero_hijos > '2'

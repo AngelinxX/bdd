@@ -62,3 +62,10 @@ and es.apellido like '%n%'
 select * 
 from estudiantes es
 where codigo_profesor in (select codigo from profesores where nombre = 'Miguel Estupinan')
+
+select codigo_profesor, count (es.cedula)
+from profesores pr, estudiantes es
+where pr.codigo = es.codigo_profesor
+group by codigo_profesor
+
+select ROUND (AVG(EXTRACT(YEAR from current_date ) )) from estudiantes

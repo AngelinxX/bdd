@@ -43,3 +43,7 @@ select pr.nombre, pr.stock
 from productos pr, ventas ve
 where pr.codigo = ve.codigo_producto
 and ve.cantidad = 345
+
+select max (precio) from productos
+
+select sum 	(cantidad) from ventas

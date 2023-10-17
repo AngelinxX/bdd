@@ -40,3 +40,11 @@ where cedula like '%7%'
 select * from clientes
 where cedula = '1723231212'
 
+select cl.cedula, sum(co.monto) 
+from compras co, clientes cl
+where co.cedula=cl.cedula
+group by cl.cedula
+
+select fecha_compra, count(id_compras) from compras
+where fecha_compra = '03/04/2023'
+group by fecha_compra

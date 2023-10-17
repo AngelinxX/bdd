@@ -69,3 +69,10 @@ select  re.codigo_registro,em.nombre
 from registro_entrada re, empleado em
 where re.codigo_empleado = em.codigo_empleado
 and re.cedula_empleado like '%2132%'
+
+select cedula_empleado, count(codigo_registro)
+from registro_entrada
+group by cedula_empleado
+
+select min(fecha), max(fecha)
+from registro_entrada
