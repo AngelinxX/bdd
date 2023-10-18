@@ -1,3 +1,5 @@
+drop table proyecto_municipio
+
 create table ciudad(
 	id int,
 	nombre varchar (45) not null,
@@ -23,9 +25,10 @@ create table proyecto(
 create table proyecto_municipio(
 	municipio_id int not null,
 	proyecto_id int not null,
-	constraint proyecto_fk foreign (proyecto_id) references proyecto(id)
-	constraint municipio_fk foreign (municipio_id) references municipio(id)
-	constraint reservas_pk primary key (habitacion,huesped_id)
+	id_proyecto_municipio int,
+	constraint proyecto_fk foreign key (proyecto_id) references proyecto(id),
+	constraint municipio_fk foreign key (municipio_id) references municipio(id),
+	constraint proyecto_municipio_pk primary key (municipio_id,proyecto_id)
 )
 
 insert into ciudad values   (1,'Quito'),
@@ -67,3 +70,47 @@ insert into proyecto_municipio values (1,1,5),
 									  (8,3,6),
 									  (9,1,3),
 									  (10,2,7);
+									  
+select * from ciudad
+select * from municipio
+select * from proyecto
+select * from proyecto_municipio
+
+select mu.nombre, pr.proyecto
+from municipio mu,proyecto pr, proyecto_municipio pm
+where  mu.id = pm.municipio_id
+and pr.id = pm.proyecto_id
+
+select pr.proyecto
+from proyecto pr
+where  pr.id in ( select pm.municipio_id from proyecto_municipio pm where pm.municipio_id = 1)
+
+select mu.nombre, count (pm.proyecto_id)
+from municipio mu, proyecto_municipio pm
+where mu.id = pm.municipio_id				 
+group by mu.nombre
+
+select mu.nombre, pr.proyecto
+from municipio mu,proyecto pr, proyecto_municipio pm
+where  mu.id = pm.municipio_id
+and pr.id = pm.proyecto_id
+and mu.nombre like '%GAD%'
+
+select mu.nombre, min (pm.proyecto_id)
+from municipio mu, proyecto_municipio pm
+where mu.id = pm.municipio_id				 
+group by mu.nombre
+
+alter table municipio
+add constraint ciudad_municipio_fk 
+foreign key (ciudad_id)
+references ciudad(id)
+
+select pr.proyecto
+from proyecto pr
+where  pr.id in ( select pm.municipio_id from proyecto_municipio pm where pm.municipio_id = 3)
+
+select mu.nombre, max (pm.proyecto_id)
+from municipio mu, proyecto_municipio pm
+where mu.id = pm.municipio_id				 
+group by mu.nombre
