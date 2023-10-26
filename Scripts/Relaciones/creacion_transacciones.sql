@@ -19,7 +19,7 @@ foreign key (codigo_transaccion)
 references transacciones(codigo)
 
 insert into transacciones(codigo,numero_cuenta,monto,tipo,fecha,hora)
-values ('1','222003',782.76,'D','27/12/2023','08:31');
+values ('1','222003',782.76,'D','12/27/2023','08:31');
 
 insert into transacciones(codigo,numero_cuenta,monto,tipo,fecha,hora)
 values ('12','222002',72.36,'C','05/12/2023','19:23');
@@ -83,3 +83,10 @@ select * from transacciones
 where codigo between '1' and '5'
 and numero_cuenta between '222002' and '22204'
 and extract (day from fecha) between '26' and '29'
+
+select * from transacciones
+
+insert into transacciones(codigo,numero_cuenta,monto,tipo,fecha,hora)
+values ('21','156764',8756.34,'D','03/05/2001','08:31');
+
+delete from transacciones where codigo = '21'

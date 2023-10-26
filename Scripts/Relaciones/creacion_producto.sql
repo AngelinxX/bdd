@@ -64,3 +64,11 @@ or descripcion like '% %'
 select nombre from productos
 where descripcion is null
 or stock = '0'
+
+
+select * from productos
+
+insert into productos (codigo,nombre,descripcion,precio,stock)
+values ('765342','Folder','Folder sin anillo',150.11,'23');
+
+delete from productos where codigo = '765342'
