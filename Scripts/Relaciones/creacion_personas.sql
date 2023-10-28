@@ -5,6 +5,7 @@ create table personas(
 	cedula char(10)not null,
 	nombre varchar(50) not null,
 	apellido varchar(50) not null,
+	estado_civil char(1),
 	estatura decimal(10,2),
 	fecha_nacimiento date,
 	hora_nacimiento time,
@@ -29,4 +30,4 @@ select * from personas
 insert into personas(cedula,nombre,apellido,estatura,cantidad_ahorrada,numero_hijos)
 values ('1723827432','Mario','Jimenez',1.90,8947.90,4);
 
-delete from personas where cedula = '1723827432'
+delete from personas where cedula = '1724879837'
